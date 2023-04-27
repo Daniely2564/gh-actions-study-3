@@ -1,0 +1,16 @@
+name: Getting Env from Github Environment
+on:
+  push:
+    branches:
+      - main
+      - dev
+env:
+  PORT: 3000
+# First set the environment and from the enviornmnet you can pick up secret variables
+jobs:
+  test:
+    environment: my-testing
+    steps:
+      - name: Print Secret Env
+        run: |
+          echo "Secret : ${{ secrets.MONGODB_NAME }}"
