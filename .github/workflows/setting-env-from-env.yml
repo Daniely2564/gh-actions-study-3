@@ -10,6 +10,7 @@ env:
 jobs:
   test:
     environment: my-testing
+    runs-on: ubuntu-latest
     steps:
       - name: Print Secret Env
         run: |
